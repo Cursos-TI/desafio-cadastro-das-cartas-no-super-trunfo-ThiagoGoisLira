@@ -10,7 +10,7 @@
 int main (){
 	//Variaves da carta 1
 	char estadoCard1; //Variavel estado 
-	char codigoCard1[2]; //Variavel codigo
+	char codigoCard1[4]; //Variavel codigo
 	char nomeCidadeCard1[50]; //Variavel nome da cidade
 	int populacaoCard1, npontosTuristicosCard1; //Variavel pupulação e numero de pontos turisticos
 	float areaCard1, pibCard1;//Variavel area e do pib
@@ -25,10 +25,10 @@ int main (){
 	
 	//Lendo dados carta 1
 	printf("Preencha dados da carta 1:\nDigite um caracter referente ao estado entre A a H: \n");
-	scanf("%c",&estadoCard1);
+	scanf(" %c",&estadoCard1);
 	//Lendo	 codigo do estado
 	printf("Digite um numero de 01 a 04 para representar o codigo: \n");
-	scanf("%s",&codigoCard1);
+	scanf("%s",codigoCard1);
 	//Lendo o nome da cidade
 	getchar(); // limpa o buffer antes de usar fgets
 	printf("Nome da cidade: \n");
@@ -51,10 +51,10 @@ int main (){
 	
 	//Lendo dados carta 2
 	printf("Preencha dados da carta 2:\nDigite um caracter referente ao estado entre A a H: \n");
-	scanf("%c",&estadoCard2);
+	scanf(" %c",&estadoCard2);
 	//Lendo	 codigo do estado
 	printf("Digite um numero de 01 a 04 para representar o codigo: \n");
-	scanf("%s",&codigoCard2);
+	scanf("%s",codigoCard2);
 	//Lendo o nome da cidade
 	getchar(); // limpa o buffer antes de usar fgets
 	printf("Nome da cidade: \n");
