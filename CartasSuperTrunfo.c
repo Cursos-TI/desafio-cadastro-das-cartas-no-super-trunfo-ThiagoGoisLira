@@ -93,8 +93,9 @@ int main (){
 	printf("Populacao: %d \n",populacaoCard2);
 	printf("Area: %.2f km2 \n",areaCard2);
 	printf("PIB: %.2f Bilhoes de reais\n",pibCard2);
-	printf("Numero de pontos turisticos: %d \n",npontosTuristicosCard2);
+	printf("Numero de pontos turisticos: %d \n\n",npontosTuristicosCard2);
 
+	printf("Thiago gois\n");
 
 return 0;	
 } 
