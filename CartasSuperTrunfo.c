@@ -8,12 +8,15 @@
 // Thiago j gois lira
 
 int main (){
+	// Variaives novas aventureiro
+	float populacionalCard1, populacionalCard2, pibpercapitaCard1, pibpercapitaCard2;
+	
 	//Variaves da carta 1
 	char estadoCard1; //Variavel estado 
-	char codigoCard1[4]; //Variavel codigo
-	char nomeCidadeCard1[50]; //Variavel nome da cidade
-	int populacaoCard1, npontosTuristicosCard1; //Variavel pupulação e numero de pontos turisticos
-	float areaCard1, pibCard1;//Variavel area e do pib
+	char codigoCard1[4];
+	char nomeCidadeCard1[50];
+	int populacaoCard1, npontosTuristicosCard1;
+	float areaCard1, pibCard1;
 
 	//Variaves da carta 2
 	char estadoCard2;
@@ -73,7 +76,13 @@ int main (){
 	printf("Numero de pontos turisticos:\n");
 	scanf("%d",&npontosTuristicosCard2);
 
-
+	//Manipulações dos dados
+	populacionalCard1 = (float) populacaoCard1 / areaCard1;
+	populacionalCard2 = (float) populacaoCard2 / areaCard2;
+	pibpercapitaCard1 = (float) (pibCard1 *1000000000)/ populacaoCard1;
+	pibpercapitaCard2 = (float) (pibCard2 *1000000000)/ populacaoCard2;
+	
+	
 
 	//Exibindos detalhes da carta 1
 	printf("Carta 1: \n");
@@ -83,7 +92,9 @@ int main (){
 	printf("Populacao: %d \n",populacaoCard1);
 	printf("Area: %.2f km2 \n",areaCard1);
 	printf("PIB: %.2f Bilhoes de reais\n",pibCard1);
-	printf("Numero de pontos turisticos: %d \n\n",npontosTuristicosCard1);
+	printf("Numero de pontos turisticos: %d \n",npontosTuristicosCard1);
+	printf("Desidade Populacional: %.2f hab/km2 \n", populacionalCard1);
+	printf("PIB per capita: %.2f reais\n\n", pibpercapitaCard1);
 	
 	//Exibindos detalhes da carta 2
 	printf("Carta 2: \n");
@@ -93,7 +104,9 @@ int main (){
 	printf("Populacao: %d \n",populacaoCard2);
 	printf("Area: %.2f km2 \n",areaCard2);
 	printf("PIB: %.2f Bilhoes de reais\n",pibCard2);
-	printf("Numero de pontos turisticos: %d \n\n",npontosTuristicosCard2);
+	printf("Numero de pontos turisticos: %d \n",npontosTuristicosCard2);
+	printf("Desidade Populacional: %.2f hab/km2 \n", populacionalCard2);
+	printf("PIB per capita: %.2f reais\n\n", pibpercapitaCard2);
 
 	printf("Thiago gois\n");
 
