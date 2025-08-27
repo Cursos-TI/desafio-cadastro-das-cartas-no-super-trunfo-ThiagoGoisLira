@@ -12,7 +12,7 @@ int main (){
 	// Variaives novas aventureiro
 	float populacionalCard1, populacionalCard2, pibpercapitaCard1, pibpercapitaCard2;
 	//Variaveis nivel mestre
-	float superPoderCard1,superPoderCard2,densidadeCard1,densidadeCard2;
+	float superPoderCard1,superPoderCard2;
     
 	//Variaves da carta 1
 	char estadoCard1; //Variavel estado 
@@ -121,15 +121,15 @@ int main (){
 	
 	// Cálculos
 
-    superPoderCard1 = (float)populacaoCard1 + areaCard1 + pibCard1 + npontosTuristicosCard1 + pibpercapitaCard1 + (1.0f / densidadeCard1);
-    superPoderCard2 = (float)populacaoCard2 + areaCard2 + pibCard2 + npontosTuristicosCard2 + pibpercapitaCard2 + (1.0f / densidadeCard2);
+    superPoderCard1 = (float)populacaoCard1 + areaCard1 + pibCard1 + npontosTuristicosCard1 + pibpercapitaCard1 + (1.0f / populacionalCard1);
+    superPoderCard2 = (float)populacaoCard2 + areaCard2 + pibCard2 + npontosTuristicosCard2 + pibpercapitaCard2 + (1.0f / populacionalCard2);
 
     // Comparações
     int vPopulacao = populacaoCard1 > populacaoCard2;
     int vArea = areaCard1 > areaCard2;
     int vPIB = pibCard1 > pibCard2;
     int vPontos = npontosTuristicosCard1 > npontosTuristicosCard2;
-    int vDensidade = densidadeCard1 < densidadeCard2; // menor vence
+    int vDensidade = populacionalCard1 < populacionalCard2; // menor vence
     int vPIBperCapita = pibpercapitaCard1 > pibpercapitaCard2;
     int vSuperPoder = superPoderCard1 > superPoderCard2;
 
