@@ -2,7 +2,7 @@
 #include <string.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
+// Tema 3 - Super trunfo em C: Desenvolvendo a logica do jogo
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
 // Thiago j gois lira
@@ -15,14 +15,14 @@ int main (){
 	float superPoderCard1,superPoderCard2;
     
 	//Variaves da carta 1
-	char estadoCard1; //Variavel estado 
+	char estadoCard1 [4]; //Variavel estado 
 	char codigoCard1[4];
 	char nomeCidadeCard1[50];
 	unsigned long int populacaoCard1, npontosTuristicosCard1;
 	float areaCard1, pibCard1;
 
 	//Variaves da carta 2
-	char estadoCard2;
+	char estadoCard2 [4];
 	char codigoCard2[4];
 	char nomeCidadeCard2[50];
 	unsigned long int populacaoCard2, npontosTuristicosCard2;
@@ -30,8 +30,8 @@ int main (){
 
 	
 	//Lendo dados carta 1
-	printf("Preencha dados da carta 1:\nDigite um caracter referente ao estado entre A a H: \n");
-	scanf(" %c",&estadoCard1);
+	printf("Preencha dados da carta 1:\nDigite  caracter referente ao estado exemplo MG: \n");
+	scanf(" %s",&estadoCard1);
 	//Lendo	 codigo do estado
 	printf("Digite um numero de 01 a 04 para representar o codigo: \n");
 	scanf("%s",codigoCard1);
@@ -56,8 +56,8 @@ int main (){
 	getchar(); // limpa o buffer antes de usar fgets
 	
 	//Lendo dados carta 2
-	printf("Preencha dados da carta 2:\nDigite um caracter referente ao estado entre A a H: \n");
-	scanf(" %c",&estadoCard2);
+	printf("Preencha dados da carta 2:\nDigite  caracter referente ao estado exemplo MG: \n");
+	scanf(" %s",&estadoCard2);
 	//Lendo	 codigo do estado
 	printf("Digite um numero de 01 a 04 para representar o codigo: \n");
 	scanf("%s",codigoCard2);
@@ -88,7 +88,7 @@ int main (){
 
 	//Exibindos detalhes da carta 1
 	printf("Carta 1: \n");
-	printf("Estado: %c \n", estadoCard1);
+	printf("Estado: %s \n", estadoCard1);
 	printf("Codigo: %c%s \n",estadoCard1, codigoCard1);
 	printf("Nome da cidade: %s \n", nomeCidadeCard1);
 	printf("Populacao: %d \n",populacaoCard1);
@@ -100,7 +100,7 @@ int main (){
 	
 	//Exibindos detalhes da carta 2
 	printf("Carta 2: \n");
-	printf("Estado: %c \n", estadoCard2);
+	printf("Estado: %s \n", estadoCard2);
 	printf("Codigo: %c%s \n",estadoCard2, codigoCard2);
 	printf("Nome da cidade: %s \n", nomeCidadeCard2);
 	printf("Populacao: %d \n",populacaoCard2);
@@ -110,7 +110,7 @@ int main (){
 	printf("Desidade Populacional: %.2f hab/km2 \n", populacionalCard2);
 	printf("PIB per capita: %.2f reais\n\n", pibpercapitaCard2);
 	
-	//Exibindos detalhes comparação de cartas
+	/*Exibindos detalhes comparação de cartas
 	printf("Comparação de cartas: \n");
 	printf("Populacao: %d \n",populacaoCard2);
 	printf("Area: %.2f km2 \n",areaCard2);
@@ -118,10 +118,24 @@ int main (){
 	printf("Numero de pontos turisticos: %d \n",npontosTuristicosCard2);
 	printf("Desidade Populacional: %.2f hab/km2 \n", populacionalCard2);
 	printf("PIB per capita: %.2f reais\n\n", pibpercapitaCard2);
+	*/
 	
 	// Cálculos
-
-    superPoderCard1 = (float)populacaoCard1 + areaCard1 + pibCard1 + npontosTuristicosCard1 + pibpercapitaCard1 + (1.0f / populacionalCard1);
+	printf("**********************************************************************\n");//Separação para visualizar saida
+	printf("Comparacao entre cartas (Atributo: Populacao)\n");
+	
+	printf("Carta 1 - %s (%s): %d \n", nomeCidadeCard1, estadoCard1, populacaoCard1);//Demotração das cartas
+	printf("Carta 2 - %s (%s): %d \n", nomeCidadeCard2, estadoCard2, populacaoCard2);
+	if(populacaoCard1>populacaoCard2){ //Comparação das cartas
+		printf("Resultado: Carta 1 (%s) Venceu",nomeCidadeCard1);
+	}
+	else if(populacaoCard1<populacaoCard2){//Comparação das cartas
+		printf("Resultado: Carta 2 (%s) Venceu",nomeCidadeCard2);
+	}
+	else{//Comparação das cartas em caso de igualdade
+		printf("Resultado: Carta 1 (%s) e Carta 2 (%s) sao iguais.",nomeCidadeCard1,nomeCidadeCard2);
+	}
+    /*superPoderCard1 = (float)populacaoCard1 + areaCard1 + pibCard1 + npontosTuristicosCard1 + pibpercapitaCard1 + (1.0f / populacionalCard1);
     superPoderCard2 = (float)populacaoCard2 + areaCard2 + pibCard2 + npontosTuristicosCard2 + pibpercapitaCard2 + (1.0f / populacionalCard2);
 
     // Comparações
@@ -141,7 +155,7 @@ int main (){
     printf("Pontos Turisticos: Carta %d venceu (%d)\n", vPontos ? 1 : 2, vPontos);
     printf("Densidade Populacional: Carta %d venceu (%d)\n", vDensidade ? 1 : 2, vDensidade);
     printf("PIB per Capita: Carta %d venceu (%d)\n", vPIBperCapita ? 1 : 2, vPIBperCapita);
-    printf("Super Poder: Carta %d venceu (%d)\n", vSuperPoder ? 1 : 2, vSuperPoder);
+    printf("Super Poder: Carta %d venceu (%d)\n", vSuperPoder ? 1 : 2, vSuperPoder);*/
 
 return 0;	
 } 
